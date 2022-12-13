@@ -1,0 +1,812 @@
+[
+    {
+        "id": "1d03f8308be14057",
+        "type": "tab",
+        "label": "10336661_trabalhofinal",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7acb2dcb1f03733e",
+        "type": "exec",
+        "z": "1d03f8308be14057",
+        "command": "python3 /home/newbar/voicedetection.py",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "3b8756dcd26cd042",
+                "d8bffad984c219dc"
+            ],
+            [
+                "6baed8eb4816bdd6"
+            ],
+            [
+                "4aef0e5c9fff5dd4"
+            ]
+        ]
+    },
+    {
+        "id": "646afb8b48a759a0",
+        "type": "inject",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 270,
+        "y": 580,
+        "wires": [
+            [
+                "7acb2dcb1f03733e"
+            ]
+        ]
+    },
+    {
+        "id": "3b8756dcd26cd042",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 770,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "6baed8eb4816bdd6",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 2",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "4aef0e5c9fff5dd4",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 3",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1090,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "d8bffad984c219dc",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "Blueberry DEtected",
+        "func": "if (msg.payload == \"Hotword Detected\"){\n    msg.payload = true;\n}\nelse{\n    msg.payload = false;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 300,
+        "wires": [
+            [
+                "e424fb0ae58e7181",
+                "a0ab963c2e1c61a9"
+            ]
+        ]
+    },
+    {
+        "id": "e424fb0ae58e7181",
+        "type": "exec",
+        "z": "1d03f8308be14057",
+        "command": "python3 /home/newbar/Downloads/rhino01.py --access_key MWeHicHpP6OwHbQRX24jeFKiMWBnorjbDk7wLarq3cf3to9zSwymqQ== --context_path /home/newbar/Downloads/678c20e8-c291-4530-92d4-cac1239409ef/PicoSmartLighting_en_linux_v2_1_0.rhn",
+        "addpay": "",
+        "append": "",
+        "useSpawn": "false",
+        "timer": "",
+        "winHide": false,
+        "oldrc": false,
+        "name": "",
+        "x": 960,
+        "y": 100,
+        "wires": [
+            [
+                "09e17e93d348f04f",
+                "c56fb84785284098",
+                "fcacfe8404a539e6",
+                "3ad04b391459d592"
+            ],
+            [
+                "8438eb44edc0220e"
+            ],
+            [
+                "16ba8c06ccc04dbd"
+            ]
+        ]
+    },
+    {
+        "id": "8438eb44edc0220e",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 5",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1950,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "16ba8c06ccc04dbd",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 6",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1930,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "a0ab963c2e1c61a9",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 7",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 870,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "09e17e93d348f04f",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 4",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1990,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "c56fb84785284098",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "todas as lampadas",
+        "func": "if (msg.payload.includes(\"state : 'on'\") && msg.payload.includes(\"turnAllLight\")){\n    msg.payload = \"ON\";\n}\nelse if (msg.payload.includes(\"state : 'off'\") && msg.payload.includes(\"turnAllLight\")) {\n    msg.payload = \"OFF\";\n}\nelse{\n    return;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1690,
+        "y": 580,
+        "wires": [
+            [
+                "0a31b4986d5e2068",
+                "3b742ba1fa9c4f28"
+            ]
+        ]
+    },
+    {
+        "id": "0a31b4986d5e2068",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 9",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1870,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "3b742ba1fa9c4f28",
+        "type": "mqtt out",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "topic": "10336661_lights",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "248394bbd95e1d1f",
+        "x": 2040,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "fcacfe8404a539e6",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "lampada sala",
+        "func": "if (msg.payload.includes(\"state : 'on'\") && msg.payload.includes(\"turnLivingRoomLight\")){\n    msg.payload = \"ON\";\n}\nelse if (msg.payload.includes(\"state : 'off'\") && msg.payload.includes(\"turnLivingRoomLight\")) {\n    msg.payload = \"OFF\";\n}\nelse{\n    return;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1630,
+        "y": 740,
+        "wires": [
+            [
+                "66077c92ee5d912d",
+                "cc35bc873f644c47"
+            ]
+        ]
+    },
+    {
+        "id": "66077c92ee5d912d",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 10",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1830,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "cc35bc873f644c47",
+        "type": "mqtt out",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "topic": "10336661_light_1",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "248394bbd95e1d1f",
+        "x": 2010,
+        "y": 740,
+        "wires": []
+    },
+    {
+        "id": "3ad04b391459d592",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "lampada quarto",
+        "func": "if (msg.payload.includes(\"state : 'on'\") && msg.payload.includes(\"turnBedroomLight\")){\n    msg.payload = \"ON\";\n}\nelse if (msg.payload.includes(\"state : 'off'\") && msg.payload.includes(\"turnBedroomLight\")) {\n    msg.payload = \"OFF\";\n}\nelse{\n    return;\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 880,
+        "wires": [
+            [
+                "4011acbdbca5240c",
+                "f8e7ee63ae06fcde"
+            ]
+        ]
+    },
+    {
+        "id": "4011acbdbca5240c",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 11",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 1790,
+        "y": 820,
+        "wires": []
+    },
+    {
+        "id": "f8e7ee63ae06fcde",
+        "type": "mqtt out",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "topic": "10336661_light_2",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "248394bbd95e1d1f",
+        "x": 1970,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "cfda77616ef41324",
+        "type": "telegram receiver",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "bot": "f7a8fbe487e50380",
+        "saveDataDir": "",
+        "filterCommands": false,
+        "x": 730,
+        "y": 680,
+        "wires": [
+            [
+                "1a1d45504a2101b5"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "1a1d45504a2101b5",
+        "type": "telegram sender",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "bot": "f7a8fbe487e50380",
+        "haserroroutput": false,
+        "outputs": 1,
+        "x": 1090,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ba09e0c1631e3789",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "func": "if (msg.payload == \"ON\"){\n    msg.payload = \"PORTA ABERTA\";\n}\nelse\n    return;\nvar content = msg.payload;\nmsg.payload = { \"chatId\":795230372,\n    \"sentMessageId\": 46,\n    \"type\": \"message\",\n    \"content\":content} \n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 680,
+        "y": 780,
+        "wires": [
+            [
+                "1a1d45504a2101b5"
+            ]
+        ]
+    },
+    {
+        "id": "b619ea53fb954e29",
+        "type": "mqtt in",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "topic": "10336661_presence",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "248394bbd95e1d1f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "37d432efa935004b",
+                "ba09e0c1631e3789",
+                "e25977a527f06c2a"
+            ]
+        ]
+    },
+    {
+        "id": "37d432efa935004b",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 12",
+        "active": false,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 510,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "689b0e8024b4bf8e",
+        "type": "inject",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 490,
+        "y": 840,
+        "wires": [
+            [
+                "ba09e0c1631e3789"
+            ]
+        ]
+    },
+    {
+        "id": "7c4c4675d79f1d24",
+        "type": "mqtt in",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "topic": "10336661_Tempdata",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "248394bbd95e1d1f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 200,
+        "y": 960,
+        "wires": [
+            [
+                "f9c6f1c0fbeabdd9"
+            ]
+        ]
+    },
+    {
+        "id": "6c671087fb17db20",
+        "type": "debug",
+        "z": "1d03f8308be14057",
+        "name": "debug 13",
+        "active": true,
+        "tosidebar": true,
+        "console": true,
+        "tostatus": true,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "payload",
+        "statusType": "auto",
+        "x": 510,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "f9c6f1c0fbeabdd9",
+        "type": "split",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "splt": ",",
+        "spltType": "str",
+        "arraySplt": "1",
+        "arraySpltType": "len",
+        "stream": false,
+        "addname": "",
+        "x": 430,
+        "y": 1060,
+        "wires": [
+            [
+                "b86284a2ac58979f"
+            ]
+        ]
+    },
+    {
+        "id": "b86284a2ac58979f",
+        "type": "join",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "mode": "custom",
+        "build": "array",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": false,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "num",
+        "reduceFixup": "",
+        "x": 550,
+        "y": 1100,
+        "wires": [
+            [
+                "6c671087fb17db20",
+                "17f19b4a03e35df5",
+                "89ec7cbb992f5731"
+            ]
+        ]
+    },
+    {
+        "id": "237d21fc3d7c26a0",
+        "type": "ui_gauge",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "group": "ba1216ecc2a93615",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidade",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "className": "",
+        "x": 770,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "7827787a5e53e907",
+        "type": "ui_chart",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "group": "ba1216ecc2a93615",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Temperatura (C)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 780,
+        "y": 940,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "17f19b4a03e35df5",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "function 1",
+        "func": "msg.payload = msg.payload[1];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 660,
+        "y": 1180,
+        "wires": [
+            [
+                "237d21fc3d7c26a0"
+            ]
+        ]
+    },
+    {
+        "id": "89ec7cbb992f5731",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "function 2",
+        "func": "msg.payload = msg.payload[0];\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 840,
+        "y": 1100,
+        "wires": [
+            [
+                "7827787a5e53e907"
+            ]
+        ]
+    },
+    {
+        "id": "54ebe25bd4ad0d88",
+        "type": "ui_text",
+        "z": "1d03f8308be14057",
+        "group": "ba1216ecc2a93615",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Porta Aberta?",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "x": 980,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "e25977a527f06c2a",
+        "type": "function",
+        "z": "1d03f8308be14057",
+        "name": "",
+        "func": "if (msg.payload == \"ON\"){\n    msg.payload = \"SIIIIIIIM\";\n}\nelse\n    msg.payload = \"NAO\";\n    \nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 700,
+        "y": 860,
+        "wires": [
+            [
+                "54ebe25bd4ad0d88"
+            ]
+        ]
+    },
+    {
+        "id": "248394bbd95e1d1f",
+        "type": "mqtt-broker",
+        "name": "HiveMQ",
+        "broker": "broker.mqttdashboard.com",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f7a8fbe487e50380",
+        "type": "telegram bot",
+        "botname": "psi50312_bot",
+        "usernames": "",
+        "chatids": "",
+        "baseapiurl": "",
+        "updatemode": "polling",
+        "pollinterval": "300",
+        "usesocks": false,
+        "sockshost": "",
+        "socksport": "6667",
+        "socksusername": "anonymous",
+        "sockspassword": "",
+        "bothost": "",
+        "botpath": "",
+        "localbotport": "8443",
+        "publicbotport": "8443",
+        "privatekey": "",
+        "certificate": "",
+        "useselfsignedcertificate": false,
+        "sslterminated": false,
+        "verboselogging": false
+    },
+    {
+        "id": "ba1216ecc2a93615",
+        "type": "ui_group",
+        "name": "CasaInteligente",
+        "tab": "49032e4ea61ee3a7",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "49032e4ea61ee3a7",
+        "type": "ui_tab",
+        "name": "CasaInteligente",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
